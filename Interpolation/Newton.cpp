@@ -2,7 +2,7 @@
 // Created by Demia on 14.09.2021.
 //
 
-#include "Newton.h"
+#include "Newton.hpp"
 #include <algorithm>
 #include <cmath>
 #include <iostream>

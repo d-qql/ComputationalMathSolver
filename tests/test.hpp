@@ -4,8 +4,8 @@
 
 #ifndef COMPUTATIONALMATHSOLVER_TEST_HPP
 #define COMPUTATIONALMATHSOLVER_TEST_HPP
-#include "../Interpolation/Newton.h"
-#include "../Interpolation/Lagrange.h"
+#include "../Interpolation/Newton.hpp"
+#include "../Interpolation/Lagrange.hpp"
 std::vector<double> generateData(int n) {
     std::vector<double> test(n);
     for (auto &element: test) {

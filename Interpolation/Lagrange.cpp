@@ -2,7 +2,7 @@
 // Created by Demia on 13.09.2021.
 //
 
-#include "Lagrange.h"
+#include "Lagrange.hpp"
 #include <algorithm>
 #include <cmath>
 #include <iostream>
