@@ -5,6 +5,7 @@
 |x|1|2|3|
 |-|-|-|-|
 |y|0.5|0.25|0.25|
+### main.cpp:
 ```cpp
 #include "Derivation/UnderfinedCoefficientsMethod.hpp"
 
@@ -27,3 +28,46 @@ int main() {
 ```cpp
 UCM.calculate(2, 3);
 ```
+## 2. Интерполяция
+Интерполировать значение функции, заданной шаблоном в точке x = 2.5
+
+|x|1|2|3|4|
+|-|-|-|-|-|
+|y|1|4|9|16|
+
+### main.cpp:
+```cpp
+#include "Interpolation/Newton.hpp"
+
+int main() {
+    // создаем шаблон
+    Template t = {
+                  {1, 2, 3, 4},
+                  {1, 4, 9, 16}
+                  };
+    // создаем экземпляр интерполятора Ньютона
+    Newton newton(t);
+    // вызываем метод интерполяции в нужной точке
+    std::cout << newton.interpolate(2.5) <<std::endl;
+    return 0;
+}
+```
+Аналогично можно использовать метод Лагранжа, вместо Ньютона(идентичны):
+### main.cpp:
+```cpp
+#include "Interpolation/Lagrange.hpp"
+
+int main() {
+    // создаем шаблон
+    Template t = {
+                  {1, 2, 3, 4},
+                  {1, 4, 9, 16}
+                  };
+    // создаем экземпляр интерполятора Лагранжа
+    Lagrange lagrange(t);
+    // вызываем метод интерполяции в нужной точке
+    std::cout << lagrange.interpolate(2.5) <<std::endl;
+    return 0;
+}
+```
+## 3. Интегрирование
