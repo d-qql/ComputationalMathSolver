@@ -8,7 +8,8 @@
 #include <iostream>
 #include <vector>
 #include "../Template/Template.hpp"
-
+#include <functional>
+#include "Chebyshev.hpp"
 class Newton {
 private:
     std::vector<double> x;
@@ -22,7 +23,7 @@ public:
     Newton() = delete;
     Newton(const std::vector<double>& x, const std::vector<double>& y);
     Newton(const Template& aTemplate);
-
+    Newton(double a, double b, int n, std::function<double(double)> function);
     double interpolate(double x);
 
 };

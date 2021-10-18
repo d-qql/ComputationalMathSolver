@@ -7,6 +7,7 @@
 #include <cmath>
 #include <iostream>
 
+
 Newton::Newton(const Template &aTemplate) {
     this->x = aTemplate.x;
     this->y = aTemplate.y;
@@ -43,7 +44,27 @@ double Newton::interpolate(double t) {
 
 }
 
-Newton::Newton(const std::vector<double> &x, const std::vector<double> &y) : x(x), y(y) {}
+Newton::Newton(const std::vector<double> &x, const std::vector<double> &y) : x(x), y(y) {
+    diff.resize(this->x.size());
+    int N = this->x.size() - 1;
+    diff.back() = difference(N, 0, N);
+    diff[0] = y[0];
+}
+
+Newton::Newton(double a, double b, int n, std::function<double(double)> function) {
+    std::vector<double> roots = ChebyshevRoots(a, b, n);
+    std::vector<double> values;
+
+    for(auto i : roots){
+        values.push_back(function(i));
+    }
+    this->x = roots;
+    this->y = values;
+    diff.resize(this->x.size());
+    int N = this->x.size() - 1;
+    diff.back() = difference(N, 0, N);
+    diff[0] = y[0];
+}
 
 
 
