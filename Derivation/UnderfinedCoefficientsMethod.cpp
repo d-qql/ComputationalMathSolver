@@ -5,6 +5,12 @@
 #include "UnderfinedCoefficientsMethod.hpp"
 #include "../MatrixSolver/GaussMehtod.hpp"
 
+int factorial(int n) {
+    int fact = 1;
+    for (int i = 1; i <= n; ++i) fact *= i;
+    return fact;
+}
+
 UnderfinedCoefficientsMethod::UnderfinedCoefficientsMethod(const Template &aTemplate) : x(aTemplate.x), y(aTemplate.y) {
     h = x[1] - x[0];
     for (int i = 2; i < x.size(); ++i) {
@@ -33,12 +39,12 @@ double UnderfinedCoefficientsMethod::calculate(int j, int n) const {
 
     //solve system
     std::vector<double> b(x.size(), 0);
-    b[n] = 1;
+    b[n] = factorial(n);
     std::vector<double> alpha = headGaussMethod(A, b);
 
     // calculate derivative
     double result = 0;
-    for(int i = 0; i < x.size(); ++i){
+    for (int i = 0; i < x.size(); ++i) {
         result += alpha[i] * y[i];
     }
     return result;

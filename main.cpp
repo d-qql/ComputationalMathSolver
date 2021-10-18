@@ -37,8 +37,8 @@ int main() {
               << newtonCotes.three_eights(x, func) << " " << newtonCotes.three_eights(1, 5, 4, func) << std::endl;
     std::cout << gauss.integrate(func) << std::endl;
     Template deriv = {{1,   2,    3},
-                      {0.5, 0.25, 0.25}};
+                      {0.5, 0.5, 0.25}};
     UnderfinedCoefficientsMethod UCM(deriv);
-    std::cout << UCM.calculate(2);
+    std::cout << UCM.calculate(1, 2);
     return 0;
 }

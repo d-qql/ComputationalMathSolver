@@ -11,6 +11,7 @@
 #include <cmath>
 #include <iostream>
 
+int factorial(int n);
 class UnderfinedCoefficientsMethod {
 private:
     std::vector<double> x;
