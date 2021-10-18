@@ -11,5 +11,6 @@ int main() {
     Newton newton(2, 4, 4, func);
     // выводим интерполяционный полином
     newton.get_polynomial();
+    std::cout<<newton.interpolate(3);
     return 0;
 }

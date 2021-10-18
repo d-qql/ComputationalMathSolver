@@ -30,7 +30,6 @@ double Newton::difference(double k, int first, int last) {
 }
 
 
-
 Newton::Newton(const std::vector<double> &x, const std::vector<double> &y) : x(x), y(y) {
     diff.resize(this->x.size());
     int N = this->x.size() - 1;
@@ -42,7 +41,7 @@ Newton::Newton(double a, double b, int n, std::function<double(double)> function
     std::vector<double> roots = ChebyshevRoots(a, b, n);
     std::vector<double> values;
 
-    for(auto i : roots){
+    for (auto i: roots) {
         values.push_back(function(i));
     }
     this->x = roots;
@@ -52,6 +51,7 @@ Newton::Newton(double a, double b, int n, std::function<double(double)> function
     diff.back() = difference(N, 0, N);
     diff[0] = y[0];
 }
+
 double Newton::interpolate(double t) {
     double result = 0;
     double complex;
@@ -66,16 +66,18 @@ double Newton::interpolate(double t) {
     return result;
 
 }
+
 void Newton::get_polynomial() const {
     std::cout << "P(x) = ";
-    for(int i = 0; i < diff.size(); ++i){
+    for (int i = 0; i < diff.size(); ++i) {
         std::cout.setf(std::ios::showpos);
         std::cout << diff[i];
-        for(int k = 0; k < i; ++k){
-            std::cout << "(x" << -x[k] <<")";
+        for (int k = 0; k < i; ++k) {
+            std::cout << "(x" << -x[k] << ")";
         }
     }
     std::cout.unsetf(std::ios::showpos);
+    std::cout << std::endl;
 }
 
 
