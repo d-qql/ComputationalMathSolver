@@ -7,6 +7,7 @@
 
 #include <array>
 #include <vector>
+#include <functional>
 
 /**
  *

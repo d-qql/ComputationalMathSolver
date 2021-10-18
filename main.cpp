@@ -16,19 +16,19 @@ double func(double x) {
 }
 
 int main() {
-//    std::map<int, double> poly;
-//    poly = {{0, 5},
-//            {1, -4},
-//            {2, 3},
-//            {3, 2},
-//            {4, 1}};
-//    Polynomial p(poly);
-//    std::cout << p << p.derivative(1);
-//    Template t = {{1, 2, 3, 4},
-//                  {1, 4, 9, 16}};
-//    Newton newton(t);
-//    std::cout << newton.interpolate(2.5) <<std::endl;
-//    test(5);
+    std::map<int, double> poly;
+    poly = {{0, 5},
+            {1, -4},
+            {2, 3},
+            {3, 2},
+            {4, 1}};
+    Polynomial p(poly);
+    std::cout << p << p.derivative(1);
+    Template t = {{1, 2, 3, 4},
+                  {1, 4, 9, 16}};
+    Newton newton(t);
+    std::cout << newton.interpolate(2.5) <<std::endl;
+    test(5);
     Gauss<2> gauss(0, 1);
     NewtonCotes newtonCotes;
     std::vector<double> x = {1, 2, 3, 4, 5};
