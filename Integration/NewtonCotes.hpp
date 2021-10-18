@@ -7,7 +7,8 @@
 
 #include <functional>
 #include <vector>
-
+#include <cmath>
+#include <iostream>
 class NewtonCotes {
 public:
     double trapeze(const std::vector<double> &x, std::function<double(double)> function);

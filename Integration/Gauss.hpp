@@ -8,6 +8,8 @@
 #include <array>
 #include <vector>
 #include <functional>
+#include <cmath>
+#include <iostream>
 
 /**
  *

@@ -4,6 +4,8 @@
 
 #ifndef COMPUTATIONALMATHSOLVER_TRIPLET_HPP
 #define COMPUTATIONALMATHSOLVER_TRIPLET_HPP
+#include <cmath>
+#include <iostream>
 struct Triplet {
     int i;
     int j;

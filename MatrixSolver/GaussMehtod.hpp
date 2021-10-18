@@ -5,7 +5,8 @@
 #ifndef COMPUTATIONALMATHSOLVER_GAUSSMEHTOD_HPP
 #define COMPUTATIONALMATHSOLVER_GAUSSMEHTOD_HPP
 
-
+#include <cmath>
+#include <iostream>
 #include <vector>
 #include "DenseMatrix.hpp"
 #include "../Utility/Consts.hpp"

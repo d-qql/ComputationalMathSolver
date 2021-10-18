@@ -4,7 +4,8 @@
 
 #ifndef INTERPOLATOR_LAGRANGE_H
 #define INTERPOLATOR_LAGRANGE_H
-
+#include <cmath>
+#include <iostream>
 #include <vector>
 #include "../Template/Template.hpp"
 

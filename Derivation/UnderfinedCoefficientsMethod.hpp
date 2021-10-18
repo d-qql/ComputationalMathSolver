@@ -8,6 +8,8 @@
 
 #include "../Template/Template.hpp"
 #include "../MatrixSolver/GaussMehtod.hpp"
+#include <cmath>
+#include <iostream>
 
 class UnderfinedCoefficientsMethod {
 private:

@@ -4,7 +4,8 @@
 
 #ifndef INTERPOLATOR_NEWTON_H
 #define INTERPOLATOR_NEWTON_H
-
+#include <cmath>
+#include <iostream>
 #include <vector>
 #include "../Template/Template.hpp"
 

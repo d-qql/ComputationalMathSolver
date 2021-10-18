@@ -7,6 +7,7 @@
 
 #include <map>
 #include <iostream>
+#include <cmath>
 class Polynomial {
 private:
     std::map<int, double> coefs;

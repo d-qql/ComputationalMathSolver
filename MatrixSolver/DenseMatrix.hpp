@@ -4,7 +4,8 @@
 
 #ifndef COMPUTATIONALMATHSOLVER_DENSEMATRIX_HPP
 #define COMPUTATIONALMATHSOLVER_DENSEMATRIX_HPP
-
+#include <cmath>
+#include <iostream>
 #include <vector>
 #include "Triplet.hpp"
 #include "set"
