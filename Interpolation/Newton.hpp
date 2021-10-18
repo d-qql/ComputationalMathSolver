@@ -25,6 +25,7 @@ public:
     Newton(const Template& aTemplate);
     Newton(double a, double b, int n, std::function<double(double)> function);
     double interpolate(double x);
+    void get_polynomial() const;
 
 };
 

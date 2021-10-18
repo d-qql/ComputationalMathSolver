@@ -29,20 +29,7 @@ double Newton::difference(double k, int first, int last) {
 
 }
 
-double Newton::interpolate(double t) {
-    double result = 0;
-    double complex;
-    for (int i = 0; i < diff.size(); ++i) {
-        complex = 1;
-        for (int k = 0; k < i; k++) {
-            complex *= (t - this->x[k]);
-        }
-        result += diff[i] * complex;
 
-    }
-    return result;
-
-}
 
 Newton::Newton(const std::vector<double> &x, const std::vector<double> &y) : x(x), y(y) {
     diff.resize(this->x.size());
@@ -64,6 +51,31 @@ Newton::Newton(double a, double b, int n, std::function<double(double)> function
     int N = this->x.size() - 1;
     diff.back() = difference(N, 0, N);
     diff[0] = y[0];
+}
+double Newton::interpolate(double t) {
+    double result = 0;
+    double complex;
+    for (int i = 0; i < diff.size(); ++i) {
+        complex = 1;
+        for (int k = 0; k < i; k++) {
+            complex *= (t - this->x[k]);
+        }
+        result += diff[i] * complex;
+
+    }
+    return result;
+
+}
+void Newton::get_polynomial() const {
+    std::cout << "P(x) = ";
+    for(int i = 0; i < diff.size(); ++i){
+        std::cout.setf(std::ios::showpos);
+        std::cout << diff[i];
+        for(int k = 0; k < i; ++k){
+            std::cout << "(x" << -x[k] <<")";
+        }
+    }
+    std::cout.unsetf(std::ios::showpos);
 }
 
 
