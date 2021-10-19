@@ -1,16 +1,15 @@
+//https://github.com/d-qql/ComputationalMathSolver
+#include "Integration/Gauss.hpp"
 
-#include "Interpolation/Newton.hpp"
-// реализуем функцию, которую необходимо заменить полиномом
 double func(double x) {
-    return std::exp(x)*sin(x);
+    return x * x * x + 5 * x * x + 10 * x + 4.5;
 }
 
 int main() {
-    // создаем интерполятор Ньютона, указав крайние точки отрезка(тут [-1, 1])
-    // и необходимое число узлов, а также нашу функцию
-    Newton newton(2, 4, 4, func);
-    // выводим интерполяционный полином
-    newton.get_polynomial();
-    std::cout<<newton.interpolate(3);
+
+    Gauss<3> gauss(-3, 1);
+    std::cout << "Значение интеграла: " << gauss.integrate(func) << std::endl;
+    std::cout << "Квадратура точна для полинома степени не выше 5, данный полином третьей степени.";
+
     return 0;
 }
