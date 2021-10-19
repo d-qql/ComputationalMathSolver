@@ -1,4 +1,4 @@
-//https://github.com/d-qql/ComputationalMathSolver
+//https://github.com/d-qql/ComputationalMathSolver/tree/task_2
 #include "Integration/Gauss.hpp"
 
 double func(double x) {
